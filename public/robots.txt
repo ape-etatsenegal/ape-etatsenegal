@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /private
+
+# Host
+Host: https://ape-etatsenegal.com
+
+# Sitemaps
+Sitemap: https://ape-etatsenegal.com/sitemap.xml
