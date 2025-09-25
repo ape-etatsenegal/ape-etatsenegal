@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://ape-etatsenegal.com"),   
 
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.ico",   
     apple: "/apple-touch-icon.png",
   },
 
