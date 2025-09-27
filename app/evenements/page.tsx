@@ -18,11 +18,11 @@ export default function Page() {
   <div className="grid grid-cols-1 gap-8 max-w-3xl mx-auto">
     {[
       {
-        title: "Lien 1",
+        title: "Lien Youtube",
         url: "https://m.youtube.com/watch?v=HwYQZLwAQNA",
       },
       {
-        title: "Lien 2",
+        title: "Lien Facebook",
         url: "https://www.facebook.com/share/v/17BpP3dHZH/?mibextid=wwXIfr",
       },
     ].map((link, index) => (
