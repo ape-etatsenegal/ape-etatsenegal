@@ -3,12 +3,49 @@
 import Image from "next/image";
 import Header from "@/components/ui/Header";
 import Footer from "@/components/ui/Footer";
+import Link from "next/link";
 
 export default function Page() {
   return (
     <div className="min-h-screen mx-auto bg-gray-50">
       {/* Header */}
       <Header />
+<section className="py-16 px-4 bg-gray-50">
+  <h2 className="text-3xl md:text-4xl text-center text-gray-800 mb-12">
+    Les liens pour suivre le direct
+  </h2>
+
+  <div className="grid grid-cols-1 gap-8 max-w-3xl mx-auto">
+    {[
+      {
+        title: "Lien 1",
+        url: "https://m.youtube.com/watch?v=HwYQZLwAQNA",
+      },
+      {
+        title: "Lien 2",
+        url: "https://www.facebook.com/share/v/17BpP3dHZH/?mibextid=wwXIfr",
+      },
+    ].map((link, index) => (
+      <div
+        key={index}
+        className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300"
+      >
+        <a
+          href={link.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full p-4 flex flex-col items-center bg-[#b7e07f] hover:bg-[#aaec4e] transition"
+        >
+          <h3 className="text-lg font-semibold text-black hover:text-white">
+            {link.title}
+          </h3>
+        </a>
+      </div>
+    ))}
+  </div>
+</section>
+
+
 
       {/* Section vidéo /}
       {/* 
