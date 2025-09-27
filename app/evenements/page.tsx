@@ -29,6 +29,17 @@ export default function Page() {
       */}   
 
       {/* Hero Section */}
+            <section className="relative mb-4 md:mb-8 mt-4 ml-20 mr-20">
+        {/* Image en arrière-plan */}
+        <Image
+          src="/images/impaxisshow.jpeg"
+          alt="cadre operation"
+          width={1920}
+          height={1080}
+          className="w-full h-auto"
+          priority
+        />
+      </section>
       <section className="relative w-full mb-16 mt-4 md:mt-0">
         {/* Image en arrière-plan */}
         <Image
