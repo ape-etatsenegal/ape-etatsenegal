@@ -23,7 +23,7 @@ export default function Page() {
             muted
             className="w-full h-full object-cover"
           >
-            <source src="/videos/souscrire.mp4" type="video/mp4" />
+            <source src="/videos/tutoriel.mp4" type="video/mp4" />
             Votre navigateur ne supporte pas la lecture de vidéos.
           </video>
         </div>
