@@ -1,8 +1,9 @@
+// app/layout.tsx
 import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "APE Etat du Sénégal - Emprunt Obligataire",
+  title: "APE Etat du Sénégal - Emprunt Obligatoire",
   description: "Site officiel de l'emprunt obligataire de l'Etat du Sénégal",
   metadataBase: new URL("https://www.ape-etatsenegal.com"),
 
@@ -42,55 +43,47 @@ export const metadata: Metadata = {
   },
 };
 
-function GoogleMetaTags() {
-  return (
-    <>
-      {/* URL canonique pour Google */}
-      <link rel="canonical" href="https://www.ape-etatsenegal.com/" />
-
-      {/* Préchargement du logo */}
-      <link rel="preload" href="/images/logo2.png" as="image" />
-
-      {/* JSON-LD pour logo et organisation */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify([
-            {
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "APE Etat du Sénégal",
-              "url": "https://www.ape-etatsenegal.com",
-              "logo": "https://www.ape-etatsenegal.com/images/logo2.png",
-              "image": "https://www.ape-etatsenegal.com/images/logo2.png",
-              "sameAs": [
-                "https://www.facebook.com/apesenegal",
-                "https://twitter.com/apesenegal"
-              ]
-            },
-            {
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              "name": "APE Etat du Sénégal",
-              "url": "https://www.ape-etatsenegal.com",
-              "publisher": {
-                "@type": "Organization",
-                "name": "APE Etat du Sénégal",
-                "logo": "https://www.ape-etatsenegal.com/images/logo2.png"
-              }
-            }
-          ])
-        }}
-      />
-    </>
-  );
-}
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
       <head>
-        <GoogleMetaTags />
+        {/* URL canonique */}
+        <link rel="canonical" href="https://www.ape-etatsenegal.com/" />
+
+        {/* Préchargement du logo pour performance */}
+        <link rel="preload" href="/images/logo2.png" as="image" />
+
+        {/* JSON-LD côté serveur pour Google */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "APE Etat du Sénégal",
+                "url": "https://www.ape-etatsenegal.com",
+                "logo": "https://www.ape-etatsenegal.com/images/logo2.png",
+                "image": "https://www.ape-etatsenegal.com/images/logo2.png",
+                "sameAs": [
+                  "https://www.facebook.com/apesenegal",
+                  "https://twitter.com/apesenegal"
+                ]
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "APE Etat du Sénégal",
+                "url": "https://www.ape-etatsenegal.com",
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "APE Etat du Sénégal",
+                  "logo": "https://www.ape-etatsenegal.com/images/logo2.png"
+                }
+              }
+            ]),
+          }}
+        />
       </head>
       <body className="font-arial">{children}</body>
     </html>

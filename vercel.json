@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "ape-etatsenegal.com"
+        }
+      ],
+      "destination": "https://www.ape-etatsenegal.com/$1",
+      "permanent": true
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState,} from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useRef } from "react";
 import Image from "next/image";
