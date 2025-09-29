@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: "APE Etat du Sénégal - Emprunt Obligatoire",
     description: "Site officiel de l'emprunt obligataire de l'Etat du Sénégal",
     images: ["/images/logo2.png"],
-    creator: "@apesenegal",
+    creator: "@apeetatsenegal",
   },
 };
 
