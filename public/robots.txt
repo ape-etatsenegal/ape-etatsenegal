@@ -1,9 +1,13 @@
-# *
+# Autoriser tous les robots
 User-agent: *
 Allow: /
+
+# Autoriser explicitement les images et fichiers statiques Next.js
+Allow: /images/
+Allow: /_next/static/
 
 # Host
 Host: https://ape-etatsenegal.com
 
-# Sitemaps
+# Sitemap
 Sitemap: https://ape-etatsenegal.com/sitemap.xml
