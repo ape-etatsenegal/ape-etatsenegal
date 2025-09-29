@@ -12,8 +12,6 @@ export default function Page() {
            <Header />
       {/* Hero Section */}
       
-     
-      
       <section className="w-full flex justify-center items-center mt-8 mb-12 px-4">
         <div className="relative w-full md:w-3/4 lg:w-2/3 aspect-video rounded-2xl overflow-hidden shadow-lg">
           <video

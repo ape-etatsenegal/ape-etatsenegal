@@ -1,21 +1,25 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://ape-etatsenegal.com', // Domaine officiel
-  generateRobotsTxt: true,                // Génère automatiquement robots.txt
-  sitemapSize: 5000,
-  changefreq: 'weekly',                   // Mise à jour hebdomadaire
+  siteUrl: 'https://ape-etatsenegal.com', // Ton domaine
+  generateRobotsTxt: true,               // Génère aussi robots.txt
+  sitemapSize: 5000,                      // Nombre max d'URLs par sitemap
+  changefreq: 'daily',
   priority: 0.7,
-  exclude: ["/admin", "/private"],        // Exemple de pages à exclure
-  robotsTxtOptions: {
-    policies: [
-      {
-        userAgent: "*",
-        allow: "/",
-        disallow: ["/admin", "/private"], // Bloque certaines pages sensibles
-      },
-    ],
-    additionalSitemaps: [
-      'https://ape-etatsenegal.com/sitemap.xml', // Sitemap principal
-    ],
+
+  // Cette fonction transforme chaque URL
+  transform: async (config, url) => {
+    return {
+      loc: url,                           // URL de la page
+      changefreq: config.changefreq,      // Fréquence
+      priority: config.priority,          // Priorité
+      lastmod: new Date().toISOString(),  // Date de dernière modification
+    }
   },
+
+  // URLs supplémentaires à inclure si elles ne sont pas détectées automatiquement
+  additionalPaths: async (config) => [
+    '/souscris',
+    '/documentation',
+    '/evenements',
+  ],
 };

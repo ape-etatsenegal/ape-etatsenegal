@@ -4,25 +4,28 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "APE Etat du Sénégal - Emprunt Obligataire",
   description: "Site officiel de l'emprunt obligataire de l'Etat du Sénégal",
-
-  // Domaine principal
-  metadataBase: new URL("https://ape-etatsenegal.com"),   
+  metadataBase: new URL("https://www.ape-etatsenegal.com"),
 
   icons: {
-    icon: "/favicon.ico",   
-    apple: "/apple-touch-icon.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "180x180" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
 
   openGraph: {
-    title: "APE Etat du Sénégal - Emprunt Obligataire",
-    description: "Découvrez l'emprunt obligataire officiel de l'Etat du Sénégal",
-    url: "https://ape-etatsenegal.com",
+    title: "APE Etat du Sénégal - Emprunt Obligatoire",
+    description: "Site officiel de l'emprunt obligataire de l'Etat du Sénégal",
+    url: "https://www.ape-etatsenegal.com",
     siteName: "APE Sénégal",
     images: [
       {
-        url: "https://ape-etatsenegal.com/images/logo2.png", // URL absolue
-        width: 1200,
-        height: 630,
+        url: "/images/logo2.png",
+        width: 600,
+        height: 600,
         alt: "Logo APE Sénégal",
       },
     ],
@@ -32,33 +35,62 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "APE Etat du Sénégal - Emprunt Obligataire",
-    description: "Découvrez l'emprunt obligataire officiel de l'Etat du Sénégal",
-    images: ["https://ape-etatsenegal.com/images/logo2.png"], // URL absolue
+    title: "APE Etat du Sénégal - Emprunt Obligatoire",
+    description: "Site officiel de l'emprunt obligataire de l'Etat du Sénégal",
+    images: ["/images/logo2.png"],
+    creator: "@apesenegal",
   },
 };
+
+function GoogleMetaTags() {
+  return (
+    <>
+      {/* URL canonique pour Google */}
+      <link rel="canonical" href="https://www.ape-etatsenegal.com/" />
+
+      {/* Préchargement du logo */}
+      <link rel="preload" href="/images/logo2.png" as="image" />
+
+      {/* JSON-LD pour logo et organisation */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "APE Etat du Sénégal",
+              "url": "https://www.ape-etatsenegal.com",
+              "logo": "https://www.ape-etatsenegal.com/images/logo2.png",
+              "image": "https://www.ape-etatsenegal.com/images/logo2.png",
+              "sameAs": [
+                "https://www.facebook.com/apesenegal",
+                "https://twitter.com/apesenegal"
+              ]
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "APE Etat du Sénégal",
+              "url": "https://www.ape-etatsenegal.com",
+              "publisher": {
+                "@type": "Organization",
+                "name": "APE Etat du Sénégal",
+                "logo": "https://www.ape-etatsenegal.com/images/logo2.png"
+              }
+            }
+          ])
+        }}
+      />
+    </>
+  );
+}
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
       <head>
-        {/* ✅ JSON-LD pour Google */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "APE Etat du Sénégal",
-              "url": "https://ape-etatsenegal.com",
-              "logo": "https://ape-etatsenegal.com/images/logo2.png",
-              "sameAs": [
-                "https://www.facebook.com/apesenegal", 
-                "https://twitter.com/apesenegal"
-              ]
-            }),
-          }}
-        />
+        <GoogleMetaTags />
       </head>
       <body className="font-arial">{children}</body>
     </html>
