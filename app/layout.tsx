@@ -10,8 +10,7 @@ export const metadata: Metadata = {
 
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon.png", type: "image/png", sizes: "180x180" },
+      { url: "/favicon.ico", sizes: "any", type: "image/x-icon" },
     ],
     apple: [
       { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
@@ -25,9 +24,9 @@ export const metadata: Metadata = {
     siteName: "APE Sénégal",
     images: [
       {
-        url: "/images/logo2.png",
-        width: 600,
-        height: 600,
+        url: "/favicon.ico",
+        width: 48,
+        height: 48,
         alt: "Logo APE Sénégal",
       },
     ],
@@ -39,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "APE Etat du Sénégal - Emprunt Obligatoire",
     description: "Site officiel de l'emprunt obligataire de l'Etat du Sénégal",
-    images: ["/images/logo2.png"],
+    images: ["/favicon.ico"],
     creator: "@apeetatsenegal",
   },
 };
@@ -61,8 +60,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 "@type": "Organization",
                 "name": "APE Etat du Sénégal",
                 "url": "https://www.ape-etatsenegal.com",
-                "logo": "https://www.ape-etatsenegal.com/images/logo2.png",
-                "image": "https://www.ape-etatsenegal.com/images/logo2.png",
+                "logo": "https://www.ape-etatsenegal.com/favicon.ico",
+                "image": "https://www.ape-etatsenegal.com/favicon.ico",
                 "sameAs": [
                   "https://www.facebook.com/apesenegal",
                   "https://twitter.com/apesenegal"
@@ -76,7 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 "publisher": {
                   "@type": "Organization",
                   "name": "APE Etat du Sénégal",
-                  "logo": "https://www.ape-etatsenegal.com/images/logo2.png"
+                  "logo": "https://www.ape-etatsenegal.com/favicon.ico"
                 }
               }
             ]),
