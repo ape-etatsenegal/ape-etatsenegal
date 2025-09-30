@@ -1,14 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Ignore les erreurs ESLint lors de la build
   eslint: {
     ignoreDuringBuilds: true,
   },
+
+  // Pour désactiver l’optimisation automatique des images
   images: {
     unoptimized: true,
   },
-  output: 'standalone', // IMPORTANT : force une build plus autonome
+
+  // Build autonome
+  output: 'standalone',
+
+  // Experimental options (vide pour éviter les warnings)
   experimental: {
-    serverActions: false,
+    // serverActions supprimé pour compatibilité Next.js 15+
   },
 };
 
