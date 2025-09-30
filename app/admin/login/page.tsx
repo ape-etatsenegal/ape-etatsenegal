@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Head from "next/head"; // <-- Import nécessaire
 
 export default function AdminLogin() {
   const [email, setEmail] = useState("");
@@ -40,36 +41,46 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <form onSubmit={handleSubmit} className="bg-white p-8 rounded shadow-md m-4 md:w-200">
-        <h2 className="text-2xl mb-4 text-center font-bold">Connexion Admin</h2>
-        {error && <p className="text-red-500 mb-2">{error}</p>}
+    <>
+      {/* Meta tag pour empêcher l’indexation */}
+      <Head>
+        <meta name="robots" content="noindex, nofollow" />
+        <title>Admin Login</title>
+      </Head>
 
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="w-full mb-3 p-2 border rounded"
-          required
-        />
-        <input
-          type="password"
-          placeholder="Mot de passe"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="w-full mb-3 p-2 border rounded"
-          required
-        />
+      <div className="flex justify-center items-center min-h-screen bg-gray-100">
+        <form onSubmit={handleSubmit} className="bg-white p-8 rounded shadow-md m-4 md:w-200">
+          <h2 className="text-2xl mb-4 text-center font-bold">Connexion Admin</h2>
+          {error && <p className="text-red-500 mb-2">{error}</p>}
 
-        <button
-          type="submit"
-          disabled={loading}
-          className={`w-full p-2 rounded text-white ${loading ? "bg-gray-400" : "bg-green-600 hover:bg-green-400"}`}
-        >
-          {loading ? "Connexion..." : "Se connecter"}
-        </button>
-      </form>
-    </div>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full mb-3 p-2 border rounded"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Mot de passe"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="w-full mb-3 p-2 border rounded"
+            required
+          />
+
+          <button
+            type="submit"
+            disabled={loading}
+            className={`w-full p-2 rounded text-white ${
+              loading ? "bg-gray-400" : "bg-green-600 hover:bg-green-400"
+            }`}
+          >
+            {loading ? "Connexion..." : "Se connecter"}
+          </button>
+        </form>
+      </div>
+    </>
   );
 }

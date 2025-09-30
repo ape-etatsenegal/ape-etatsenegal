@@ -1,10 +1,16 @@
-# Autoriser tous les robots
+# Bloquer l’accès aux pages sensibles
 User-agent: *
+Disallow: /admin/
+Disallow: /admin/login
+Disallow: /api/  # si tu as des endpoints API que tu ne veux pas indexer
+
+# Autoriser le reste du site
 Allow: /
 
 # Autoriser explicitement les images et fichiers statiques Next.js
 Allow: /images/
 Allow: /_next/static/
+Allow: /favicon.ico
 
 # Host
 Host: https://ape-etatsenegal.com

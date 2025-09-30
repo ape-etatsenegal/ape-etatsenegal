@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
+import Head from "next/head"; // <-- Import nécessaire
 
 import Image from "next/image";
 import {
