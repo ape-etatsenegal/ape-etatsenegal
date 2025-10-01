@@ -49,6 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         {/* URL canonique */}
         <link rel="canonical" href="https://www.ape-etatsenegal.com/" />
+        <link rel="preload" as="image" href="/favicon.ico" />
 
         {/* JSON-LD côté serveur pour Google */}
         <script
@@ -81,12 +82,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             ]),
           }}
         />
-
-        {/* Préchargement des images pour la navigation / interface */}
-        <link rel="preload" as="image" href="/images/logo3.png" />
       </head>
       <body className="font-arial">
-        {/* Ici, logo3.png sera utilisé uniquement dans le nav */}
         {children}
       </body>
     </html>
