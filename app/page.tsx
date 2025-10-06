@@ -165,7 +165,7 @@ export default function Home() {
     {
       icon: "/images/5.jpg",
       title: "Simulation",
-      link: "/#",
+      link: "/simulation",
     },
   ];
 
