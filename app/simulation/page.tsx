@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 
 export default function SimulationPage() {
   const sheetUrl =
-    "https://docs.google.com/spreadsheets/d/1l2MkBgdQn8O6aPPt2rlpmfX5YyA4pHJ7dcvfSP5GXTY/edit?usp=sharing";
+    "https://docs.google.com/spreadsheets/d/1l2MkBgdQn8O6aPPt2rlpmfX5YyA4pHJ7dcvfSP5GXTY/edit?usp=sharing&mobile=true";
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   useEffect(() => {
@@ -63,7 +63,7 @@ export default function SimulationPage() {
           Simulation 
         </h1>
 
-        <div className="flex flex-col w-full h-[200vh] border border-gray-300 rounded-lg overflow-hidden shadow-lg">
+        <div className="flex flex-col w-full h-[250vh] border border-gray-300 rounded-lg overflow-hidden shadow-lg">
           <iframe
             ref={iframeRef}
             src={sheetUrl}
