@@ -165,7 +165,7 @@ export default function Home() {
     {
       icon: "/images/5.jpg",
       title: "Simulation",
-      excel: "liste_participants", // sans l’extension
+      link: "/simulation",
     },
   ];
 
@@ -176,18 +176,17 @@ export default function Home() {
     seconds: 0,
   });
 
-const handleDownload = (filename: string, extension: string = "pdf") => {
-  const fileUrl = `/documents/${filename}.${extension}`;
-  const element = document.createElement("a");
-  element.href = fileUrl;
-  element.download = `${filename}.${extension}`;
-  element.style.display = "none";
+  const handleDownload = (filename: string, extension: string = "pdf") => {
+    const fileUrl = `/documents/${filename}.${extension}`;
+    const element = document.createElement("a");
+    element.href = fileUrl;
+    element.download = `${filename}.${extension}`;
+    element.style.display = "none";
 
-  document.body.appendChild(element);
-  element.click();
-  document.body.removeChild(element);
-};
-
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+  };
 
   return (
     <div className="min-h-screen mx-auto bg-gray-50">
