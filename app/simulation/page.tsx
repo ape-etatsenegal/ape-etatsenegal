@@ -42,7 +42,7 @@ export default function SimulationPage() {
 
       <div className="max-w-7xl mx-auto py-16 px-6">
         <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
-          Simulation - Liste des Participants
+          Simulation
         </h1>
 
         {loading ? (
@@ -92,9 +92,6 @@ export default function SimulationPage() {
           </div>
         )}
 
-        <p className="text-center text-sm mt-4 text-gray-600">
-          ✏️ Modifiez les valeurs directement ici. Les changements restent en mémoire.
-        </p>
       </div>
 
       <Footer />
