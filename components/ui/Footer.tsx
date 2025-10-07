@@ -9,10 +9,8 @@ export default function Page() {
         <div className="relative mx-auto px-4 pb-0">
           {/* Partner Logos Section */}
 
-          <div className="flex items-center justify-center mb-8">
+          <div className="flex items-center justify-center mb-10">
             {/* Bloc 1 */}
-
-            {/* Bloc 2 */}
             <div className="relative flex items-center justify-center mt-6">
               <Image
                 src="/images/impaxis.jpg"
@@ -22,9 +20,29 @@ export default function Page() {
                 className="w-full h-full object-cover"
                 priority
               />
+
+              {/* Bloc WhatsApp avec les deux numéros */}
+              <div className="absolute pr-4 md:pr-11 top-[85%] w-[25%] flex flex-col items-center justify-center space-y-0.5">
+                <a
+                  href="https://wa.me/221771151676"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-600 underline text-[6px] md:text-[10px] xl:md:text-lg font-semibold"
+                >
+                  WhatsApp : 77-115-16-76
+                </a>
+                <a
+                  href="https://wa.me/221778334407"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-600 underline text-[6px] md:text-[10px] xl:text-lg font-semibold"
+                >
+                  WhatsApp : 77-833-44-07
+                </a>
+              </div>
             </div>
 
-            {/* Bloc 3 */}
+            {/* Bloc 2 */}
           </div>
         </div>
 

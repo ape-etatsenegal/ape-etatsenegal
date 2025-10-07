@@ -95,8 +95,8 @@ useEffect(() => {
                 <Image
                   src="/images/logo3.png"
                   alt="Logo 1"
-                  width={80}
-                  height={80}
+                  width={30}
+                  height={30}
                   className="h-auto w-auto object-contain"
                   priority
                 />
@@ -105,8 +105,8 @@ useEffect(() => {
                 <Image
                   src="/images/logo1.png"
                   alt="Logo 2"
-                  width={80}
-                  height={80}
+                  width={30}
+                  height={30}
                   className="h-auto w-auto object-contain"
                 />
               </Link>
@@ -114,8 +114,8 @@ useEffect(() => {
                 <Image
                   src="/images/logo2.png"
                   alt="Logo 3"
-                  width={80}
-                  height={80}
+                  width={30}
+                  height={30}
                   className="h-auto w-[70%] object-contain"
                 />
               </Link>
