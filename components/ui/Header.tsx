@@ -183,13 +183,13 @@ useEffect(() => {
       </header>
 
       {/* Bande rouge texte défilant */}
-      <div className="hidden bg-senegal-red text-white py-2 lg:py-2 overflow-hidden shadow-senegal">
+      <div className="bg-senegal-red text-white py-2 lg:py-2 overflow-hidden shadow-senegal">
         <div className="animate-scroll whitespace-nowrap flex">
           <span className="inline-block text-sm lg:text-2xl font-arial font-bold mr-96 text-shadow">
-            Cérémonie de lancement le 18 Septembre 2025 à 16H00 GMT au Terrou-Bi
+            Clôture des souscriptions ce vendredi 10 octobre 2025 à 17h00
           </span>
           <span className="inline-block text-sm lg:text-2xl font-arial font-bold text-shadow">
-            Cérémonie De Lancement le 18 Septembre 2025 à 16H00 GMT au Terrou-Bi
+            Clôture des souscriptions ce vendredi 10 octobre 2025 à 17h00
           </span>
         </div>
       </div>
