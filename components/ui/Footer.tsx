@@ -9,7 +9,7 @@ export default function Page() {
         <div className="relative mx-auto px-4 pb-0">
           {/* Partner Logos Section */}
 
-          <div className="flex items-center justify-center mb-10">
+          <div className="flex items-center justify-center mb-20">
             {/* Bloc 1 */}
             <div className="relative flex items-center justify-center mt-6">
               <Image
@@ -23,11 +23,19 @@ export default function Page() {
 
               {/* Bloc WhatsApp avec les deux numéros */}
               <div className="absolute pr-4 md:pr-11 top-[85%] w-[25%] flex flex-col items-center justify-center space-y-0.5">
+               
+                               {/* ✅ Nouvelle ligne pour l'email */}
+                <a
+                  href="mailto:serviceclient@impaxis-securities.com"
+                  className="text-blue-600 underline text-[6px] md:text-[10px] xl:text-sm font-semibold whitespace-nowrap"
+                >
+                  serviceclient@impaxis-securities.com
+                </a>
                 <a
                   href="https://wa.me/221771151676"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-green-600 underline text-[6px] md:text-[10px] xl:md:text-lg font-semibold"
+                  className="text-green-600 underline text-[6px] md:text-[10px] xl:text-lg font-semibold"
                 >
                   WhatsApp : 77-115-16-76
                 </a>
@@ -39,9 +47,10 @@ export default function Page() {
                 >
                   WhatsApp : 77-833-44-07
                 </a>
+
+
               </div>
             </div>
-
             {/* Bloc 2 */}
           </div>
         </div>

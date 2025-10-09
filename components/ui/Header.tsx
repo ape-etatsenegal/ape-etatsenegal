@@ -186,10 +186,10 @@ useEffect(() => {
       <div className="bg-senegal-red text-white py-2 lg:py-2 overflow-hidden shadow-senegal">
         <div className="animate-scroll whitespace-nowrap flex">
           <span className="inline-block text-sm lg:text-2xl font-arial font-bold mr-96 text-shadow">
-            Clôture des souscriptions ce vendredi 10 octobre 2025 à 17h00
+            Clôture des souscriptions ce vendredi 10 octobre 2025 à 17h00GMT
           </span>
           <span className="inline-block text-sm lg:text-2xl font-arial font-bold text-shadow">
-            Clôture des souscriptions ce vendredi 10 octobre 2025 à 17h00
+            Clôture des souscriptions ce vendredi 10 octobre 2025 à 17h00GMT
           </span>
         </div>
       </div>
