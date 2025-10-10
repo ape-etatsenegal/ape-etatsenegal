@@ -30,17 +30,16 @@ export default function Header() {
   };
 
   // disparition automatique après 10 secondes
-useEffect(() => {
-  if (showDates) {
-    const timer = setTimeout(() => {
-      setFadeOut(true); // animation de disparition
-      setTimeout(() => setShowDates(false), 1000); // après l'animation, le texte est retiré
-    }, 5000); // <-- ici, 5000 ms = 5 secondes
+  useEffect(() => {
+    if (showDates) {
+      const timer = setTimeout(() => {
+        setFadeOut(true); // animation de disparition
+        setTimeout(() => setShowDates(false), 1000); // après l'animation, le texte est retiré
+      }, 5000); // <-- ici, 5000 ms = 5 secondes
 
-    return () => clearTimeout(timer);
-  }
-}, [showDates]);
-
+      return () => clearTimeout(timer);
+    }
+  }, [showDates]);
 
   // compte à rebours (inchangé)
   const [timeLeft, setTimeLeft] = useState({
@@ -86,7 +85,7 @@ useEffect(() => {
   return (
     <div>
       {/* Header */}
- <header className="bg-white shadow-md">
+      <header className="bg-white shadow-md">
         <div className="relative mx-auto px-0 py-2">
           <div className="flex items-center justify-between">
             {/* Logos du header */}
@@ -123,26 +122,24 @@ useEffect(() => {
 
             {/* Nouveaux boutons diaspora (uniquement desktop) */}
             <div className="hidden lg:flex space-x-2 mr-2 z-50">
-               <a href="https://emprunt-2025.impaxis-securities.com/" target="_blank" rel="noopener noreferrer">
-              <Button className="btn-rouge hover:bg-[#b7e07f]">
+              <Button disabled={true} className="btn-rouge hover:bg-[#b7e07f]">
                 Je souscris - Diaspora
               </Button>
-              </a>
             </div>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex space-x-2 mr-6 z-50">
-              <a href="https://emprunt-2025.impaxis-securities.com/" target="_blank" rel="noopener noreferrer">
-                <Button className="btn-senegal hover:bg-[#b7e07f]">
-                  Je souscris
-                </Button>
-              </a>
-               <a href="/faq">
+              <Button
+                disabled={true}
+                className="btn-senegal hover:bg-[#b7e07f]"
+              >
+                Je souscris
+              </Button>
+
               <Button className="btn-rouge hover:bg-[#b7e07f]">FAQ</Button>
-              </a>
             </nav>
 
-          {/* Mobile Menu Button */}
+            {/* Mobile Menu Button */}
             <button
               className="lg:hidden p-2 mr-4 text-gray-600 hover:text-senegal-green rounded-lg border border-gray-300 bg-white shadow-sm"
               onClick={toggleMobileMenu}
@@ -159,22 +156,24 @@ useEffect(() => {
           {isMobileMenuOpen && (
             <div className="lg:hidden mt-4 pb-4 border-t border-gray-300 bg-white shadow-lg mx-2">
               <div className="flex flex-col space-y-2 pt-4 sm:mr-[10rem] sm:ml-[10rem]">
-                <Link
-                  href="https://emprunt-2025.impaxis-securities.com/" target="_blank" rel="noopener noreferrer"
+                <Button
+                  disabled={true}
+                  className="btn-senegal hover:bg-[#b7e07f] w-full"
                 >
-                  <Button className="btn-senegal hover:bg-[#b7e07f] w-full">je souscris</Button>
-                </Link>
-                <Link
-                  href="https://emprunt-2025.impaxis-securities.com/" target="_blank" rel="noopener noreferrer"
+                  je souscris
+                </Button>
+
+                <Button
+                  disabled={true}
+                  className="btn-rouge hover:bg-[#b7e07f] w-full"
                 >
-                  <Button className="btn-rouge hover:bg-[#b7e07f] w-full">
-                    je souscris-diaspora
+                  je souscris-diaspora
+                </Button>
+
+                <a href="/faq">
+                  <Button className="btn-rouge hover:bg-[#b7e07f] border-0 w-full">
+                    FAQ
                   </Button>
-                </Link>
-                <Link href="/souscris">
-                </Link>
-                 <a href="/faq">
-                <Button className="btn-rouge hover:bg-[#b7e07f] border-0 w-full">FAQ</Button>
                 </a>
               </div>
             </div>
@@ -186,10 +185,10 @@ useEffect(() => {
       <div className="bg-senegal-red text-white py-2 lg:py-2 overflow-hidden shadow-senegal">
         <div className="animate-scroll whitespace-nowrap flex">
           <span className="inline-block text-sm lg:text-2xl font-arial font-bold mr-96 text-shadow">
-            Clôture des souscriptions ce vendredi 10 octobre 2025 à 17h00GMT
+            Les souscriptions sont clôturées. Merci pour votre engagement.
           </span>
           <span className="inline-block text-sm lg:text-2xl font-arial font-bold text-shadow">
-            Clôture des souscriptions ce vendredi 10 octobre 2025 à 17h00GMT
+            Les souscriptions sont clôturées. Merci pour votre engagement.
           </span>
         </div>
       </div>

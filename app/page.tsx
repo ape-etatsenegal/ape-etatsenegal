@@ -205,15 +205,12 @@ export default function Home() {
 
         {/* Bouton centré en bas, en rouge posé sur l'image */}
         <div className="absolute -bottom-4 lg:bottom-2 2xl:bottom-5 space-x-4 right-1/4">
-          <Link
-            href="https://emprunt-2025.impaxis-securities.com/"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Button
+            disabled={true}
+            className="btn-senegal-grand md:text-lg font-bold hover:bg-[#afe465]"
           >
-            <Button className="btn-senegal-grand md:text-lg font-bold hover:bg-[#afe465]">
-              Je souscris
-            </Button>
-          </Link>
+            Je souscris
+          </Button>
         </div>
       </section>
       {/* Documentation Section */}{" "}
@@ -364,7 +361,7 @@ export default function Home() {
               <Button
                 type="submit"
                 className="btn-senegal mt-6 md:px-3 md:py-5 text-lg font-bold flex items-center justify-center hover:bg-[#afe465]"
-                disabled={loading} // désactive le bouton pendant le chargement
+                disabled={true} // désactive le bouton pendant le chargement
               >
                 {loading ? (
                   <svg
