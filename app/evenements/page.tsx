@@ -32,7 +32,7 @@ export default function Page() {
       >
         <a
           href={link.url}
-          target="_blank"
+          target="_blank"  
           rel="noopener noreferrer"
           className="w-full p-4 flex flex-col items-center bg-[#b7e07f] hover:bg-[#aaec4e] transition"
         >
